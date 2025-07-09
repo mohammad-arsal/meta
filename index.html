@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digitize Daniyal - Meta Ads Expert</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1b67eb',
+                        secondary: '#FFC400',
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #3175eb 0%, #1b67eb 100%);
+        }
+
+        .logo-img {
+            height: 64px;
+            /* Increased size */
+            width: auto;
+            object-fit: contain;
+            image-rendering: auto;
+            /* ensures smooth scaling */
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+            /* softer shadow */
+            transition: transform 0.3s ease;
+        }
+
+
+        .custom-switch {
+            width: 3rem;
+            height: 1.5rem;
+            background-color: #e5e7eb;
+            border-radius: 9999px;
+            position: relative;
+            transition: background-color 0.2s;
+        }
+
+        .custom-switch.active {
+            background-color: #FFC400;
+        }
+
+        .custom-switch::after {
+            content: '';
+            position: absolute;
+            width: 1.25rem;
+            height: 1.25rem;
+            background-color: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.2s;
+        }
+
+        .custom-switch.active::after {
+            transform: translateX(1.5rem);
+        }
+
+        @keyframes slideFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-left {
+            animation: slideFromLeft 1s ease-out forwards;
+        }
+
+        .animate-right {
+            animation: slideFromRight 1s ease-out forwards;
+        }
+
+        /* Already defined: Keep as is */
+        @keyframes slideFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromTop {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Base hidden state */
+        .opacity-0 {
+            opacity: 0;
+        }
+
+        /* Apply animations only after entering view */
+        .animate-left.animate-start {
+            animation: slideFromLeft 2s ease-out forwards;
+        }
+
+        .animate-right.animate-start {
+            animation: slideFromRight 2s ease-out forwards;
+        }
+
+        .animate-top.animate-start {
+            animation: slideFromTop 3s ease-out forwards;
+        }
+
+        @keyframes fadeSlideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .fade-up-init {
+            opacity: 0;
+        }
+
+        .fade-up-on-scroll {
+            animation: fadeSlideUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeDown {
+            0% {
+                transform: translateY(-40px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .hidden-opacity {
+            opacity: 0;
+        }
+
+        .fade-down-on-scroll {
+            animation: fadeDown 0.8s ease-out forwards;
+        }
+
+        .slide-in-left-on-scroll {
+            animation: slideInFromLeft 1s ease-out forwards;
+        }
+
+        .slide-in-right-on-scroll {
+            animation: slideInFromRight 1s ease-out forwards;
+        }
+
+        /* WHO section custom animations */
+        @keyframes whoFadeDown {
+            0% {
+                transform: translateY(-40px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes whoSlideLeft {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes whoSlideRight {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .who-init {
+            opacity: 0;
+        }
+
+        .who-heading-animate-start {
+            animation: whoFadeDown 0.8s ease-out forwards;
+        }
+
+        .who-left-animate-start {
+            animation: whoSlideLeft 0.9s ease-out forwards;
+        }
+
+        .who-right-animate-start {
+            animation: whoSlideRight 0.9s ease-out forwards;
+        }
+
+        @keyframes reviewFadeDown {
+            0% {
+                transform: translateY(-40px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes reviewSlideFromLeft {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes reviewSlideFromRight {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes reviewSlideFromBottom {
+            0% {
+                transform: translateY(80px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .review-init {
+            opacity: 0;
+        }
+
+        .review-heading-animate-start {
+            animation: reviewFadeDown 0.8s ease-out forwards;
+        }
+
+        .review-card-left-start {
+            animation: reviewSlideFromLeft 1s ease-out forwards;
+        }
+
+        .review-card-center-start {
+            animation: reviewSlideFromBottom 1s ease-out forwards;
+        }
+
+        .review-card-right-start {
+            animation: reviewSlideFromRight 1s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm">
+        <nav class="px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center">
+                    <img src="./WhatsApp_Image_2025-07-08_at_06.25.21_7d0338ec-removebg-preview.png"
+                        alt="Digitize Daniyal Logo" class="h-20 w-auto">
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-primary hover:text-secondary transition">About</a>
+                    <a href="#services" class="text-primary hover:text-secondary transition">Services</a>
+                    <a href="#case-studies" class="text-primary hover:text-secondary transition">Case Studies</a>
+                    <button
+                        class="!rounded-button bg-secondary text-primary px-6 py-2 font-semibold whitespace-nowrap">Book
+                        Free Audit</button>
+                </div>
+                <button class="md:hidden text-primary w-10 h-10 flex items-center justify-center">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main class="pt-16">
+        <section class="relative min-h-[90vh] flex items-center"
+            style="background-image: url('./images/0f034eab0eec6debe3058af5b84ff302.jpg'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-primary/40"></div>
+            <div class="container mx-auto px-6 relative">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Text (from right) -->
+                    <div class="text-white space-y-8 animate-right">
+                        <h1 class="text-5xl font-bold leading-tight">Scaling E-Commerce Brands with Signal-Driven Meta
+                            Ads</h1>
+                        <p class="text-secondary text-xl">Not an agency — your freelance Meta Ads partner.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <button
+                                class="!rounded-button bg-secondary text-primary px-8 py-3 font-semibold whitespace-nowrap transition hover:scale-105 hover:shadow-xl">
+                                Book Free Audit Call</button>
+                            <button
+                                class="!rounded-button border-2 border-white text-white px-8 py-3 font-semibold whitespace-nowrap transition hover:bg-white hover:text-primary hover:scale-105">
+                                DM Me</button>
+                        </div>
+                    </div>
+
+                    <!-- Image (from left) -->
+                    <div class="flex justify-center items-center animate-left">
+                        <div class="relative group">
+                            <div
+                                class="w-[400px] h-[400px] rounded-full border-4 border-secondary p-2 transform transition-transform duration-500 group-hover:scale-110 shadow-2xl">
+                                <div class="w-full h-full rounded-full overflow-hidden"
+                                    style="background-image: url('./profile.jpg'); background-size: cover; background-position: center;">
+                                </div>
+                            </div>
+                            <div
+                                class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-secondary text-primary px-6 py-2 rounded-full font-semibold shadow-lg">
+                                Meta Ads Expert
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Image block with top animation -->
+                    <div class="h-[600px] rounded-xl bg-cover bg-center animate-top"
+                        style="background-image: url('./6d893ce4aabc83e1631cf17f05c88c9f.jpg');">
+                    </div>
+
+                    <!-- Text block with right to left animation -->
+                    <div class="space-y-8 animate-right">
+                        <h2 class="text-4xl font-bold text-primary">About Me</h2>
+                        <p class="text-gray-600 text-lg">
+                            With over 5 years of direct ad account management experience, I specialize in pixel signal
+                            optimization
+                            and creative structuring to drive meaningful results for e-commerce brands.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="p-6 bg-gray-50 rounded-xl text-center hover:shadow-md transition duration-300">
+                                <div class="w-12 h-12 mx-auto mb-4 text-secondary flex items-center justify-center">
+                                    <i class="ri-money-dollar-circle-line text-2xl"></i>
+                                </div>
+                                <h3 class="font-semibold text-primary">PKR 50M+ Sales</h3>
+                            </div>
+                            <div class="p-6 bg-gray-50 rounded-xl text-center hover:shadow-md transition duration-300">
+                                <div class="w-12 h-12 mx-auto mb-4 text-secondary flex items-center justify-center">
+                                    <i class="ri-code-box-line text-2xl"></i>
+                                </div>
+                                <h3 class="font-semibold text-primary">Pixel Frameworks</h3>
+                            </div>
+                            <div class="p-6 bg-gray-50 rounded-xl text-center hover:shadow-md transition duration-300">
+                                <div class="w-12 h-12 mx-auto mb-4 text-secondary flex items-center justify-center">
+                                    <i class="ri-user-star-line text-2xl"></i>
+                                </div>
+                                <h3 class="font-semibold text-primary">Personally Managed</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="services" class="py-24 bg-primary">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-up-init">
+                    <h2 class="text-4xl font-bold text-white inline-block relative
+             after:content-[''] after:block after:w-16 after:h-1 
+             after:bg-white after:mx-auto after:mt-2">
+                        Services
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow fade-up-init">
+                        <div class="w-12 h-12 mb-6 text-secondary flex items-center justify-center">
+                            <i class="ri-signal-tower-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-4">Pixel Training</h3>
+                        <p class="text-gray-600">Custom pixel implementation and optimization for maximum signal
+                            strength.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow fade-up-init">
+                        <div class="w-12 h-12 mb-6 text-secondary flex items-center justify-center">
+                            <i class="ri-layout-grid-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-4">Account Structuring</h3>
+                        <p class="text-gray-600">Strategic campaign architecture for optimal performance and
+                            scalability.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow fade-up-init">
+                        <div class="w-12 h-12 mb-6 text-secondary flex items-center justify-center">
+                            <i class="ri-ai-generate-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-4">AI Optimization</h3>
+                        <p class="text-gray-600">Leveraging advanced AI tools for campaign optimization and scaling.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow fade-up-init">
+                        <div class="w-12 h-12 mb-6 text-secondary flex items-center justify-center">
+                            <i class="ri-creative-commons-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-4">Creative Strategy</h3>
+                        <p class="text-gray-600">Data-driven creative testing and optimization to maximize ad
+                            performance.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow fade-up-init">
+                        <div class="w-12 h-12 mb-6 text-secondary flex items-center justify-center">
+                            <i class="ri-line-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-4">Performance Analytics</h3>
+                        <p class="text-gray-600">In-depth performance tracking and custom reporting dashboards.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow fade-up-init">
+                        <div class="w-12 h-12 mb-6 text-secondary flex items-center justify-center">
+                            <i class="ri-customer-service-2-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-4">Weekly Consulting</h3>
+                        <p class="text-gray-600">Strategic guidance and performance review sessions to keep campaigns on
+                            track.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-studies" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <!-- Heading -->
+                <div class="text-center mb-16" data-animate="fade-down-on-scroll">
+                    <h2 class="text-4xl font-bold text-primary inline-block relative
+             after:content-[''] after:block after:w-16 after:h-1 
+             after:bg-primary after:mx-auto after:mt-2">
+                        Case Studies
+                    </h2>
+                </div>
+
+                <!-- Cards -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- First Case Study (Left to Right) -->
+                    <div class="p-8 rounded-xl border border-gray-100" style="background-color: #cee0f0;"
+                        data-animate="slide-in-left-on-scroll">
+                        <div class="text-secondary mb-4">
+                            <span class="text-sm text-primary font-semibold px-3 py-1 rounded-full"
+                                style="background-color: #fbff00;">Skincare Brand</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary mb-4">0.5 to PKR 50M in 5 Months</h3>
+                        <p class="text-gray-600 mb-6">Implemented custom pixel framework and creative testing strategy
+                            to achieve unprecedented growth.</p>
+                        <a href="./skincare.html">
+                            <div class="text-secondary mb-4">
+                                <span class="text-sm text-primary font-semibold px-3 py-1 rounded-full"
+                                    style="background-color: #fbff00;">Read Full Breakdown</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Second Case Study (Right to Left) -->
+                    <div class="p-8 rounded-xl border border-gray-100" style="background-color: #cee0f0;"
+                        data-animate="slide-in-right-on-scroll">
+                        <div class="text-secondary mb-4">
+                            <span class="text-sm text-primary font-semibold px-3 py-1 rounded-full"
+                                style="background-color: #fffb00;">Fashion Brand</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary mb-4">3x ROAS Improvement</h3>
+                        <p class="text-gray-600 mb-6">Restructured account and implemented AI-driven optimization to
+                            triple return on ad spend.</p>
+                        <a href="">
+                            <div class="text-secondary mb-4">
+                                <span class="text-sm text-primary font-semibold px-3 py-1 rounded-full"
+                                    style="background-color: #fbff00;">Read Full Breakdown</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-primary">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-who-animate="who-heading-animate-start">
+                    <h2 class="text-4xl font-bold text-white inline-block relative
+        after:content-[''] after:block after:w-16 after:h-1 
+        after:bg-white after:mx-auto after:mt-2">
+                        Who I work With
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Perfect Fit -->
+                    <div class="bg-[#F6F9FF] p-8 rounded-xl border-2 border-secondary"
+                        data-who-animate="who-left-animate-start">
+                        <div class="w-16 h-16 mb-6 text-secondary flex items-center justify-center bg-white rounded-xl">
+                            <i class="ri-check-double-line text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Perfect Fit</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line text-secondary mt-1"></i>
+                                <span>E-commerce brands ready to scale with data-driven decisions</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line text-secondary mt-1"></i>
+                                <span>Monthly ad spend of PKR 500,000+ with proven product-market fit</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line text-secondary mt-1"></i>
+                                <span>Committed to long-term growth and strategic pixel optimization</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line text-secondary mt-1"></i>
+                                <span>Value expertise and willing to invest in quality traffic</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Not a Good Fit -->
+                    <div class="bg-gray-50 p-8 rounded-xl" data-who-animate="who-right-animate-start">
+                        <div class="w-16 h-16 mb-6 text-gray-400 flex items-center justify-center bg-white rounded-xl">
+                            <i class="ri-close-line text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-400 mb-4">Not a Good Fit</h3>
+                        <ul class="space-y-4 text-gray-500">
+                            <li class="flex items-start gap-3">
+                                <i class="ri-close-line text-gray-400 mt-1"></i>
+                                <span>Looking for quick wins without strategic foundation</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-close-line text-gray-400 mt-1"></i>
+                                <span>Prioritizing cheap traffic over quality conversions</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-close-line text-gray-400 mt-1"></i>
+                                <span>Not ready to invest in proper tracking and pixel setup</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-close-line text-gray-400 mt-1"></i>
+                                <span>Expecting overnight success without testing phase</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-[#F6F9FF]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-review-animate="review-heading-animate-start">
+                    <h2 class="text-4xl font-bold text-primary inline-block relative
+        after:content-[''] after:block after:w-16 after:h-1 
+        after:bg-primary after:mx-auto after:mt-2">
+                        Client Reviews
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
+                        data-review-animate="review-card-left-start">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-full overflow-hidden">
+                                <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20middle%20aged%20female%20business%20owner%20with%20confident%20smile%20against%20neutral%20background&width=200&height=200&seq=4&orientation=squarish"
+                                    alt="Sarah Mitchell" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Sarah Mitchell</h4>
+                                <p class="text-gray-500 text-sm">Beauty Brand CEO</p>
+                            </div>
+                        </div>
+                        <div class="text-secondary mb-4">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="text-gray-600">"Daniyal's expertise in Meta Ads transformed our business. His pixel
+                            optimization strategy helped us achieve a 4x ROAS within just 2 months."</p>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
+                        data-review-animate="review-card-center-start">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-full overflow-hidden">
+                                <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20young%20male%20entrepreneur%20with%20casual%20business%20attire%20against%20modern%20office%20background&width=200&height=200&seq=5&orientation=squarish"
+                                    alt="James Cooper" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">James Cooper</h4>
+                                <p class="text-gray-500 text-sm">E-commerce Director</p>
+                            </div>
+                        </div>
+                        <div class="text-secondary mb-4">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="text-gray-600">"Working with Daniyal has been game-changing. His strategic approach
+                            and attention to detail helped us scale our ad spend while maintaining profitability."</p>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
+                        data-review-animate="review-card-right-start">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-full overflow-hidden">
+                                <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20mature%20female%20marketing%20executive%20with%20elegant%20business%20attire%20against%20light%20background&width=200&height=200&seq=6&orientation=squarish"
+                                    alt="Emily Zhang" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Emily Zhang</h4>
+                                <p class="text-gray-500 text-sm">Marketing Manager</p>
+                            </div>
+                        </div>
+                        <div class="text-secondary mb-4">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="text-gray-600">"The personalized attention and expert guidance from Daniyal helped us
+                            optimize our campaigns and reach our target audience effectively."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 gradient-bg">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-white mb-8">Let's Build Your Ad Engine</h2>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button
+                        class="!rounded-button bg-secondary text-primary px-8 py-3 font-semibold whitespace-nowrap">Book
+                        Free Audit</button>
+                    <button
+                        class="!rounded-button border-2 border-white text-white px-8 py-3 font-semibold whitespace-nowrap">DM
+                        Me</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white text-primary py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <a href="#" class="text-2xl font-['Pacifico']">digitize Daniyal</a>
+                    <p class="mt-4 text-white">Your trusted partner in Meta Ads optimization and scaling.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-secondary">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-secondary">Services</a></li>
+                        <li><a href="#case-studies" class="text-gray-400 hover:text-secondary">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Connect</h3>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-secondary">
+                            <i class="ri-whatsapp-line text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-secondary">
+                            <i class="ri-linkedin-line text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-secondary">
+                            <i class="ri-instagram-line text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2025 digitize Daniyal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="#"
+        class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#1da851] transition-colors">
+        <i class="ri-whatsapp-line text-2xl"></i>
+    </a>
+    <script id="nav-scroll">
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('header');
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll <= 0) {
+                    header.classList.remove('scroll-up');
+                    return;
+                }
+                if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+                    header.classList.remove('scroll-up');
+                    header.classList.add('scroll-down');
+                    header.style.transform = 'translateY(-100%)';
+                } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+                    header.classList.remove('scroll-down');
+                    header.classList.add('scroll-up');
+                    header.style.transform = 'translateY(0)';
+                }
+                lastScroll = currentScroll;
+            });
+        });
+    </script>
+    <script id="mobile-menu">
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.querySelector('.md\\:hidden');
+            const nav = document.querySelector('.md\\:flex');
+            menuButton.addEventListener('click', () => {
+                nav.classList.toggle('hidden');
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.2 // Trigger when 20% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-start');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-left, .animate-right, .animate-top').forEach(el => {
+                el.classList.add('opacity-0'); // Hide initially
+                observer.observe(el);
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const options = {
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-up-on-scroll');
+                    }
+                });
+            }, options);
+
+            document.querySelectorAll('.fade-up-init').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(entry.target.dataset.animate);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('[data-animate]').forEach(el => {
+                el.classList.add('hidden-opacity');
+                observer.observe(el);
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const whoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(entry.target.dataset.whoAnimate);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('[data-who-animate]').forEach(el => {
+                el.classList.add('who-init');
+                whoObserver.observe(el);
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const reviewObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(entry.target.dataset.reviewAnimate);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('[data-review-animate]').forEach(el => {
+                el.classList.add('review-init');
+                reviewObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>

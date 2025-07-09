@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare Brand Case Study - digiTize DaniYAL</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#0A1F44', secondary: '#FFC400' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F6F9FF;
+            color: #0A1F44;
+        }
+
+        .hero-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=A%20professional%20skincare%20product%20photography%20with%20elegant%20packaging%20and%20minimalist%20design.%20The%20products%20are%20arranged%20on%20a%20clean%20white%20surface%20with%20soft%20shadows.%20The%20left%20side%20has%20a%20gradient%20from%20white%20to%20light%20blue%20that%20perfectly%20blends%20with%20the%20right%20side%20where%20the%20products%20are%20displayed.%20The%20overall%20aesthetic%20is%20luxurious%2C%20clean%2C%20and%20modern%2C%20suitable%20for%20a%20premium%20skincare%20brand%20case%20study.&width=1920&height=600&seq=skincare_hero&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FFC400;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .active-nav::after {
+            width: 100%;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+        }
+
+        .timeline-dot {
+            position: relative;
+        }
+
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background-color: #E5E7EB;
+            left: 15px;
+            top: 24px;
+            z-index: -1;
+        }
+
+        .timeline-dot:last-child::before {
+            display: none;
+        }
+
+        .custom-checkbox {
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+        }
+
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid #E5E7EB;
+            border-radius: 4px;
+        }
+
+        .custom-checkbox:hover input~.checkmark {
+            border-color: #FFC400;
+        }
+
+        .custom-checkbox input:checked~.checkmark {
+            background-color: #FFC400;
+            border-color: #FFC400;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .custom-checkbox input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .custom-checkbox .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="./index2.html"
+                    data-readdy="true" class="flex items-center mr-8">
+                    <div class="w-8 h-8 flex items-center justify-center mr-2">
+                        <i class="ri-arrow-left-line ri-lg text-primary"></i>
+                    </div>
+                    <span class="text-primary font-medium">Back to Case Studies</span>
+                </a>
+                <a href="#" class="text-2xl font-['Pacifico'] text-primary">digiTize</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#about"
+                    data-readdy="true" class="nav-link text-primary hover:text-secondary font-medium">About</a>
+                <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#services"
+                    data-readdy="true" class="nav-link text-primary hover:text-secondary font-medium">Services</a>
+                <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#case-studies"
+                    data-readdy="true" class="nav-link text-primary hover:text-secondary font-medium active-nav">Case
+                    Studies</a>
+                <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#contact"
+                    data-readdy="true" class="nav-link text-primary hover:text-secondary font-medium">Contact</a>
+            </div>
+            <div class="hidden md:block">
+                <a href="#contact"
+                    class="bg-secondary text-primary px-6 py-2 rounded-button font-semibold hover:bg-opacity-90 transition whitespace-nowrap">Book
+                    Free Audit</a>
+            </div>
+            <div class="md:hidden w-8 h-8 flex items-center justify-center cursor-pointer" id="mobile-menu-button">
+                <i class="ri-menu-line ri-lg"></i>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-6 py-3 flex flex-col space-y-4">
+                <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#about"
+                    data-readdy="true" class="text-primary hover:text-secondary font-medium">About</a>
+                <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#services"
+                    data-readdy="true" class="text-primary hover:text-secondary font-medium">Services</a>
+                <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#case-studies"
+                    data-readdy="true" class="text-primary hover:text-secondary font-medium">Case Studies</a>
+                <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#contact"
+                    data-readdy="true" class="text-primary hover:text-secondary font-medium">Contact</a>
+                <a href="#contact"
+                    class="bg-secondary text-primary px-6 py-2 rounded-button font-semibold hover:bg-opacity-90 transition text-center whitespace-nowrap">Book
+                    Free Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg pt-24 pb-16">
+        <div class="container mx-auto px-6 w-full">
+            <div class="bg-white bg-opacity-90 p-8 md:p-12 rounded-lg max-w-4xl">
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <div class="md:w-3/4">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-spa-line ri-lg text-secondary"></i>
+                            </div>
+                            <div>
+                                <h1 class="text-3xl md:text-4xl font-bold text-primary">Glow & Grace Skincare</h1>
+                                <p class="text-gray-600">Premium Pakistani Skincare Brand</p>
+                            </div>
+                        </div>
+                        <p class="text-lg text-gray-700 mb-6">
+                            Transforming a struggling skincare brand into a profitable e-commerce powerhouse through
+                            strategic Meta ads optimization and signal-based scaling.
+                        </p>
+                    </div>
+                    <div class="md:w-1/4 bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-500">Project Duration:</span>
+                            <span class="text-sm font-medium">5 Months</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-500">Completion Date:</span>
+                            <span class="text-sm font-medium">April 2025</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-500">Initial ROAS:</span>
+                            <span class="text-sm font-medium text-red-600">0.5x</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Final ROAS:</span>
+                            <span class="text-sm font-medium text-green-600">3.2x</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-2/3">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Project Overview</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Glow & Grace Skincare approached me with a struggling Meta ads account that was generating a
+                        negative return on ad spend (ROAS). Despite having high-quality products and positive customer
+                        reviews, their digital marketing efforts were failing to deliver profitable results.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Over a 5-month period, I completely restructured their Meta ads strategy, implemented proper
+                        pixel tracking, and developed a signal-based scaling system that transformed their business. The
+                        results were dramatic: from PKR 2.7M in revenue in the first month to PKR 50M by month 5, all
+                        while maintaining profitability.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <a href="#contact"
+                            class="bg-secondary text-primary px-8 py-3 rounded-button font-semibold hover:bg-opacity-90 transition flex items-center justify-center whitespace-nowrap">
+                            <i class="ri-calendar-line ri-lg mr-2"></i>
+                            Get Similar Results
+                        </a>
+                        <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#case-studies"
+                            data-readdy="true"
+                            class="border-2 border-primary text-primary px-8 py-3 rounded-button font-semibold hover:bg-primary hover:text-white transition flex items-center justify-center whitespace-nowrap">
+                            <i class="ri-arrow-left-line ri-lg mr-2"></i>
+                            Back to Case Studies
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/3 bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Key Achievements</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div
+                                class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                <i class="ri-check-line text-green-600"></i>
+                            </div>
+                            <p class="text-gray-700"><span class="font-medium">540% increase</span> in ROAS from 0.5x to
+                                3.2x</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div
+                                class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                <i class="ri-check-line text-green-600"></i>
+                            </div>
+                            <p class="text-gray-700"><span class="font-medium">PKR 50M</span> in monthly revenue by
+                                month 5</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div
+                                class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                <i class="ri-check-line text-green-600"></i>
+                            </div>
+                            <p class="text-gray-700"><span class="font-medium">62% reduction</span> in customer
+                                acquisition cost</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div
+                                class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                <i class="ri-check-line text-green-600"></i>
+                            </div>
+                            <p class="text-gray-700"><span class="font-medium">185% increase</span> in average order
+                                value</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div
+                                class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                <i class="ri-check-line text-green-600"></i>
+                            </div>
+                            <p class="text-gray-700"><span class="font-medium">43% improvement</span> in customer
+                                retention rate</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">The Challenge</h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-semibold mb-6">Initial Problems Identified</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-close-line text-red-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Fragmented Campaign Structure:</span>
+                                    Over 25 small ad sets with minimal budgets, preventing Meta's algorithm from
+                                    gathering sufficient data.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-close-line text-red-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Improper Pixel Implementation:</span>
+                                    Basic pixel setup without custom events, leading to poor signal quality and
+                                    ineffective optimization.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-close-line text-red-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Audience Overlap:</span> Multiple ad
+                                    sets targeting similar audiences, causing internal competition and increased costs.
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-close-line text-red-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Ineffective Creative Strategy:</span>
+                                    Generic product images without clear value propositions or compelling
+                                    calls-to-action.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-close-line text-red-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">No Scaling Framework:</span>
+                                    Arbitrary budget increases without data-driven decision making or systematic
+                                    approach.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">Initial Performance Metrics</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Return on Ad Spend (ROAS)</span>
+                                <span class="font-medium text-red-600">0.5x</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounded-full">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 15%"></div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Monthly Revenue</span>
+                                <span class="font-medium">PKR 2.7M</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounded-full">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 20%"></div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Customer Acquisition Cost</span>
+                                <span class="font-medium text-red-600">PKR 4,200</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounded-full">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Conversion Rate</span>
+                                <span class="font-medium text-red-600">0.8%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounded-full">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-semibold mb-6">Business Impact</h3>
+                        <p class="text-gray-700 mb-6">
+                            When Glow & Grace approached me, they were facing several critical business challenges due
+                            to their ineffective Meta ads strategy:
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-close-line text-red-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Negative Cash Flow:</span> Spending
+                                    more on ads than generating in revenue, creating unsustainable financial pressure.
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-close-line text-red-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Growth Stagnation:</span> Unable to
+                                    scale beyond their existing customer base despite having quality products.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-close-line text-red-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Competitive Disadvantage:</span>
+                                    Losing market share to competitors with more effective digital marketing strategies.
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-close-line text-red-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Inventory Management Issues:</span>
+                                    Difficulty predicting demand, leading to either excess inventory or stockouts.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">Initial Ad Account Structure</h3>
+                        <div class="overflow-hidden rounded-lg border border-gray-200 mb-6">
+                            <img src="https://readdy.ai/api/search-image?query=A%20screenshot%20of%20a%20poorly%20structured%20Meta%20Ads%20Manager%20dashboard%20showing%20many%20small%20ad%20sets%20with%20minimal%20budgets%20and%20poor%20performance%20metrics.%20The%20interface%20shows%20multiple%20campaigns%20with%20overlapping%20audiences%20and%20red%20performance%20indicators.%20The%20image%20should%20be%20high%20quality%20and%20realistic%2C%20clearly%20illustrating%20an%20inefficient%20ad%20account%20structure%20with%20many%20small%20fragmented%20campaigns.&width=600&height=400&seq=before_account&orientation=landscape"
+                                alt="Initial Ad Account Structure" class="w-full h-auto object-top">
+                        </div>
+                        <p class="text-gray-700 text-sm italic">
+                            The original account structure with fragmented campaigns, small budgets, and overlapping
+                            audiences, resulting in poor performance and high costs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Approach Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">Strategic Approach</h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6">Implementation Timeline</h3>
+                        <div class="space-y-8">
+                            <div class="timeline-dot flex">
+                                <div
+                                    class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <span class="text-primary font-medium">1</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-lg">Week 1-2: Audit & Foundation</h4>
+                                    <p class="text-gray-600 mt-2">
+                                        Comprehensive account audit, pixel implementation with custom events, and
+                                        conversion API setup for accurate data collection.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-dot flex">
+                                <div
+                                    class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <span class="text-primary font-medium">2</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-lg">Week 3-4: Restructuring</h4>
+                                    <p class="text-gray-600 mt-2">
+                                        Complete account restructuring with logical campaign hierarchy, non-competing
+                                        audience segments, and broad targeting with strong signals.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-dot flex">
+                                <div
+                                    class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <span class="text-primary font-medium">3</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-lg">Month 2: Optimization</h4>
+                                    <p class="text-gray-600 mt-2">
+                                        Creative testing, audience refinement, and performance optimization based on
+                                        initial data. Development of custom reporting dashboard.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-dot flex">
+                                <div
+                                    class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <span class="text-primary font-medium">4</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-lg">Month 3-4: Scaling</h4>
+                                    <p class="text-gray-600 mt-2">
+                                        Implementation of signal-based scaling system, budget expansion, and advanced
+                                        audience strategies. Launch of retargeting campaigns.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-dot flex">
+                                <div
+                                    class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <span class="text-primary font-medium">5</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-lg">Month 5: Refinement</h4>
+                                    <p class="text-gray-600 mt-2">
+                                        Advanced optimization, AI-driven creative testing, and implementation of
+                                        automated rules for sustainable growth.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-semibold mb-6">Key Strategic Elements</h3>
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-lg">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="w-10 h-10 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center mr-3">
+                                        <i class="ri-code-line text-secondary"></i>
+                                    </div>
+                                    <h4 class="font-medium text-lg">Advanced Pixel Implementation</h4>
+                                </div>
+                                <p class="text-gray-600">
+                                    Implemented server-side tracking with Conversion API and custom events to capture
+                                    micro-conversions throughout the customer journey, significantly improving signal
+                                    quality.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="w-10 h-10 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center mr-3">
+                                        <i class="ri-layout-grid-line text-secondary"></i>
+                                    </div>
+                                    <h4 class="font-medium text-lg">Simplified Account Structure</h4>
+                                </div>
+                                <p class="text-gray-600">
+                                    Consolidated 25+ ad sets into 3 core campaigns with logical structure: Prospecting,
+                                    Retargeting, and Loyalty, eliminating audience overlap and competition.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="w-10 h-10 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center mr-3">
+                                        <i class="ri-user-settings-line text-secondary"></i>
+                                    </div>
+                                    <h4 class="font-medium text-lg">Custom Audience Strategy</h4>
+                                </div>
+                                <p class="text-gray-600">
+                                    Created value-based lookalike audiences and segmented retargeting audiences based on
+                                    engagement level and purchase intent signals.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="w-10 h-10 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center mr-3">
+                                        <i class="ri-rocket-line text-secondary"></i>
+                                    </div>
+                                    <h4 class="font-medium text-lg">Signal-Based Scaling System</h4>
+                                </div>
+                                <p class="text-gray-600">
+                                    Developed a proprietary scaling framework based on real-time performance signals,
+                                    allowing for systematic budget increases while maintaining profitability.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Details Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">Implementation Details</h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-semibold mb-6">Technical Implementation</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-medium text-lg mb-3">Advanced Pixel Configuration</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                            <i class="ri-check-line text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">Server-side tracking with Meta Conversion API
+                                            integration</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                            <i class="ri-check-line text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">Custom event implementation for micro-conversions (Add
+                                            to Cart, Initiate Checkout, etc.)</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                            <i class="ri-check-line text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">Value-based event tracking for purchase value
+                                            optimization</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                            <i class="ri-check-line text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">Enhanced parameters for detailed product data
+                                            transmission</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-3">Campaign Architecture</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                            <i class="ri-check-line text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">Prospecting Campaign: Broad targeting with strong
+                                            signals</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                            <i class="ri-check-line text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">Retargeting Campaign: Segmented by engagement level and
+                                            time</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                            <i class="ri-check-line text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">Loyalty Campaign: Previous customers and high-intent
+                                            users</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-3">Optimization Strategy</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                            <i class="ri-check-line text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">Value optimization for purchase events</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                            <i class="ri-check-line text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">7-day click, 1-day view attribution window</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                            <i class="ri-check-line text-green-600"></i>
+                                        </div>
+                                        <p class="text-gray-700">Advantage+ shopping campaigns for catalog optimization
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6">Tools & Technologies Used</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center mr-3">
+                                    <i class="ri-facebook-fill ri-lg text-blue-600"></i>
+                                </div>
+                                <span class="text-gray-700">Meta Ads Manager</span>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center mr-3">
+                                    <i class="ri-code-box-line ri-lg text-purple-600"></i>
+                                </div>
+                                <span class="text-gray-700">Conversion API</span>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center mr-3">
+                                    <i class="ri-shopping-cart-line ri-lg text-green-600"></i>
+                                </div>
+                                <span class="text-gray-700">Shopify Integration</span>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center mr-3">
+                                    <i class="ri-bar-chart-box-line ri-lg text-orange-600"></i>
+                                </div>
+                                <span class="text-gray-700">Custom Analytics</span>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center mr-3">
+                                    <i class="ri-ai-generate-line ri-lg text-blue-600"></i>
+                                </div>
+                                <span class="text-gray-700">Advantage+ AI</span>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center mr-3">
+                                    <i class="ri-user-search-line ri-lg text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Audience Insights</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-semibold mb-6">Before & After Comparison</h3>
+                        <div class="space-y-8">
+                            <div>
+                                <h4 class="font-medium text-lg mb-4">Account Structure</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-sm font-medium text-red-600 mb-2">Before</p>
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <ul class="text-sm text-gray-700 space-y-2">
+                                                <li>• 25+ fragmented ad sets</li>
+                                                <li>• Minimal budgets (PKR 5-10K each)</li>
+                                                <li>• Overlapping audiences</li>
+                                                <li>• Inconsistent optimization goals</li>
+                                                <li>• Manual bidding strategies</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-green-600 mb-2">After</p>
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <ul class="text-sm text-gray-700 space-y-2">
+                                                <li>• 3 core campaigns with clear purpose</li>
+                                                <li>• Consolidated budgets (PKR 500K+)</li>
+                                                <li>• Non-competing audience segments</li>
+                                                <li>• Consistent value optimization</li>
+                                                <li>• Automated bidding with controls</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-4">Ad Creative Strategy</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-sm font-medium text-red-600 mb-2">Before</p>
+                                        <div class="overflow-hidden rounded-lg border border-gray-200">
+                                            <img src="https://readdy.ai/api/search-image?query=A%20basic%2C%20amateur%20skincare%20product%20advertisement%20with%20poor%20lighting%2C%20generic%20product%20placement%2C%20and%20cluttered%20text.%20The%20ad%20lacks%20professional%20design%20elements%2C%20has%20no%20clear%20value%20proposition%2C%20and%20uses%20basic%20stock%20photography.%20The%20overall%20appearance%20is%20unprofessional%20and%20ineffective%20for%20a%20premium%20skincare%20brand.&width=300&height=300&seq=before_ad&orientation=squarish"
+                                                alt="Before Ad Creative" class="w-full h-auto object-top">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-green-600 mb-2">After</p>
+                                        <div class="overflow-hidden rounded-lg border border-gray-200">
+                                            <img src="https://readdy.ai/api/search-image?query=A%20professional%2C%20elegant%20skincare%20product%20advertisement%20with%20perfect%20lighting%2C%20minimalist%20design%2C%20and%20clear%20value%20proposition.%20The%20ad%20features%20beautiful%20product%20photography%20on%20a%20clean%20background%2C%20concise%20benefit-focused%20text%2C%20and%20a%20clear%20call-to-action.%20The%20overall%20aesthetic%20is%20premium%2C%20modern%2C%20and%20highly%20professional%2C%20suitable%20for%20a%20luxury%20skincare%20brand.&width=300&height=300&seq=after_ad&orientation=squarish"
+                                                alt="After Ad Creative" class="w-full h-auto object-top">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-4">Optimized Account Structure</h4>
+                                <div class="overflow-hidden rounded-lg border border-gray-200 mb-4">
+                                    <img src="https://readdy.ai/api/search-image?query=A%20screenshot%20of%20a%20well-structured%20Meta%20Ads%20Manager%20dashboard%20showing%20an%20organized%20campaign%20structure%20with%20clear%20hierarchy.%20The%20interface%20shows%20three%20main%20campaigns%20%28Prospecting%2C%20Retargeting%2C%20and%20Loyalty%29%20with%20healthy%20budgets%20and%20green%20performance%20indicators.%20The%20metrics%20show%20excellent%20ROAS%20and%20conversion%20rates.%20The%20image%20should%20be%20high%20quality%20and%20realistic%2C%20illustrating%20an%20efficient%20ad%20account%20structure.&width=600&height=400&seq=after_account&orientation=landscape"
+                                        alt="Optimized Account Structure" class="w-full h-auto object-top">
+                                </div>
+                                <p class="text-gray-700 text-sm italic">
+                                    The restructured account with consolidated campaigns, clear hierarchy, and
+                                    non-competing audience segments, resulting in improved performance and efficiency.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6">Signal-Based Scaling Framework</h3>
+                        <p class="text-gray-700 mb-6">
+                            A key component of our success was the implementation of a proprietary signal-based scaling
+                            system that allowed for controlled, data-driven budget increases while maintaining
+                            profitability.
+                        </p>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-medium text-lg mb-4">Scaling Decision Matrix</h4>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Signal</th>
+                                            <th
+                                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Threshold</th>
+                                            <th
+                                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                        <tr>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">ROAS > Target
+                                                for 3 days</td>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">≥ 2.5x</td>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">Increase
+                                                budget by 20%</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">ROAS > Target
+                                                for 7 days</td>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">≥ 3.0x</td>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">Increase
+                                                budget by 30%</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">ROAS < Target
+                                                    for 3 days</td>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">
+                                                < 2.0x</td>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">Reduce budget
+                                                by 15%</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">CTR above
+                                                benchmark</td>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">≥ 2.5%</td>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">Scale creative
+                                                to other ad sets</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">Frequency too
+                                                high</td>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">≥ 3.0</td>
+                                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700">Refresh
+                                                creative or expand audience</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">Results & Impact</h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-semibold mb-6">Performance Metrics</h3>
+                        <div id="roas-chart" class="w-full h-80 mb-6"></div>
+                        <div id="revenue-chart" class="w-full h-80"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-green-600 mb-2">540%</div>
+                                <p class="text-gray-700">ROAS Improvement</p>
+                                <div class="flex justify-center items-center mt-2">
+                                    <span class="text-red-600 font-medium">0.5x</span>
+                                    <i class="ri-arrow-right-line mx-2"></i>
+                                    <span class="text-green-600 font-medium">3.2x</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-green-600 mb-2">1750%</div>
+                                <p class="text-gray-700">Revenue Growth</p>
+                                <div class="flex justify-center items-center mt-2">
+                                    <span class="text-gray-600 font-medium">PKR 2.7M</span>
+                                    <i class="ri-arrow-right-line mx-2"></i>
+                                    <span class="text-green-600 font-medium">PKR 50M</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-semibold mb-6">Key Performance Indicators</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-700">Customer Acquisition Cost</span>
+                                    <div class="flex items-center">
+                                        <span class="text-red-600 font-medium">PKR 4,200</span>
+                                        <i class="ri-arrow-right-line mx-2"></i>
+                                        <span class="text-green-600 font-medium">PKR 1,600</span>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-gray-200 h-2 rounded-full">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 62%"></div>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">62% reduction in acquisition cost</p>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-700">Conversion Rate</span>
+                                    <div class="flex items-center">
+                                        <span class="text-red-600 font-medium">0.8%</span>
+                                        <i class="ri-arrow-right-line mx-2"></i>
+                                        <span class="text-green-600 font-medium">2.9%</span>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-gray-200 h-2 rounded-full">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">262% improvement in conversion rate</p>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-700">Average Order Value</span>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-600 font-medium">PKR 2,800</span>
+                                        <i class="ri-arrow-right-line mx-2"></i>
+                                        <span class="text-green-600 font-medium">PKR 5,180</span>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-gray-200 h-2 rounded-full">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">85% increase in average order value</p>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-700">Click-Through Rate</span>
+                                    <div class="flex items-center">
+                                        <span class="text-red-600 font-medium">1.2%</span>
+                                        <i class="ri-arrow-right-line mx-2"></i>
+                                        <span class="text-green-600 font-medium">3.4%</span>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-gray-200 h-2 rounded-full">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 65%"></div>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">183% improvement in CTR</p>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-700">Customer Retention Rate</span>
+                                    <div class="flex items-center">
+                                        <span class="text-red-600 font-medium">22%</span>
+                                        <i class="ri-arrow-right-line mx-2"></i>
+                                        <span class="text-green-600 font-medium">43%</span>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-gray-200 h-2 rounded-full">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">95% improvement in retention</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6">Business Impact</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-check-line text-green-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Market Expansion:</span> Successfully
+                                    entered 3 new regional markets across Pakistan</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-check-line text-green-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Product Line Growth:</span> Launched
+                                    2 new product lines with immediate profitability</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-check-line text-green-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Team Expansion:</span> Hired 15 new
+                                    team members to support growth</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                    <i class="ri-check-line text-green-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Investor Interest:</span> Secured
+                                    Series A funding based on growth metrics</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonial Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">Client Testimonial</h2>
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-sm">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3">
+                        <div class="w-32 h-32 rounded-full overflow-hidden mx-auto">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20South%20Asian%20female%20entrepreneur%20in%20her%20mid-30s%20with%20a%20confident%20smile%2C%20wearing%20business%20attire.%20She%20has%20medium-length%20dark%20hair%20and%20is%20photographed%20against%20a%20neutral%20background.%20The%20image%20should%20be%20high%20quality%2C%20well-lit%2C%20and%20professional%20looking%2C%20suitable%20for%20a%20business%20testimonial.&width=300&height=300&seq=client_photo&orientation=squarish"
+                                alt="Ayesha Khan" class="w-full h-full object-top">
+                        </div>
+                        <div class="text-center mt-4">
+                            <h4 class="font-semibold text-lg">Ayesha Khan</h4>
+                            <p class="text-gray-600">Founder & CEO</p>
+                            <p class="text-gray-600">Glow & Grace Skincare</p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="relative">
+                            <div class="absolute -top-10 -left-10 text-6xl text-secondary opacity-20">
+                                <i class="ri-double-quotes-l"></i>
+                            </div>
+                            <p class="text-lg text-gray-700 italic relative z-10 mb-6">
+                                Working with Daniyal transformed our business. Before him, we were burning money on Meta
+                                ads with no return. His methodical approach to restructuring our account and
+                                implementing proper tracking was exactly what we needed. The results speak for
+                                themselves – we went from struggling to stay afloat to scaling beyond what we thought
+                                possible.
+                            </p>
+                            <p class="text-lg text-gray-700 italic relative z-10">
+                                What sets Daniyal apart is his hands-on approach and data-driven methodology. He doesn't
+                                just manage our ads; he built a complete system that continues to deliver results. I
+                                especially appreciate his transparency and focus on long-term success rather than quick
+                                fixes. I couldn't recommend him more highly to any e-commerce brand looking to scale
+                                profitably.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges & Learnings Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">Challenges & Learnings</h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6">Key Challenges</h3>
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-lg">
+                                <h4 class="font-medium text-lg mb-3 flex items-center">
+                                    <div
+                                        class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="ri-error-warning-line text-red-600"></i>
+                                    </div>
+                                    iOS 14+ Privacy Changes
+                                </h4>
+                                <p class="text-gray-700">
+                                    Apple's privacy updates significantly impacted data visibility, requiring
+                                    implementation of server-side tracking and alternative measurement solutions to
+                                    maintain accurate performance data.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg">
+                                <h4 class="font-medium text-lg mb-3 flex items-center">
+                                    <div
+                                        class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="ri-error-warning-line text-red-600"></i>
+                                    </div>
+                                    Seasonal Demand Fluctuations
+                                </h4>
+                                <p class="text-gray-700">
+                                    Skincare purchasing patterns varied significantly during different seasons and
+                                    holidays, requiring adaptive budget allocation and creative strategies to maintain
+                                    consistent performance.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg">
+                                <h4 class="font-medium text-lg mb-3 flex items-center">
+                                    <div
+                                        class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="ri-error-warning-line text-red-600"></i>
+                                    </div>
+                                    Inventory Management
+                                </h4>
+                                <p class="text-gray-700">
+                                    Rapid scaling created inventory challenges, requiring close coordination between
+                                    marketing and operations to prevent stockouts and maintain customer satisfaction
+                                    during high-demand periods.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg">
+                                <h4 class="font-medium text-lg mb-3 flex items-center">
+                                    <div
+                                        class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="ri-error-warning-line text-red-600"></i>
+                                    </div>
+                                    Competitive Market
+                                </h4>
+                                <p class="text-gray-700">
+                                    The Pakistani skincare market became increasingly competitive during the project,
+                                    requiring continuous creative refreshes and unique value propositions to maintain
+                                    market share.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6">Key Learnings & Best Practices</h3>
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-lg">
+                                <h4 class="font-medium text-lg mb-3 flex items-center">
+                                    <div
+                                        class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="ri-lightbulb-line text-green-600"></i>
+                                    </div>
+                                    Signal Quality Over Quantity
+                                </h4>
+                                <p class="text-gray-700">
+                                    Investing in proper tracking infrastructure and focusing on high-quality signals
+                                    proved more valuable than generating large volumes of low-quality data. This
+                                    approach allowed for more accurate optimization and better algorithmic learning.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg">
+                                <h4 class="font-medium text-lg mb-3 flex items-center">
+                                    <div
+                                        class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="ri-lightbulb-line text-green-600"></i>
+                                    </div>
+                                    Systematic Scaling Approach
+                                </h4>
+                                <p class="text-gray-700">
+                                    Developing a clear, data-driven framework for scaling decisions eliminated guesswork
+                                    and emotional decision-making, allowing for consistent growth while maintaining
+                                    profitability even during challenging periods.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg">
+                                <h4 class="font-medium text-lg mb-3 flex items-center">
+                                    <div
+                                        class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="ri-lightbulb-line text-green-600"></i>
+                                    </div>
+                                    Creative-First Strategy
+                                </h4>
+                                <p class="text-gray-700">
+                                    In the competitive skincare market, creative quality and messaging proved to be the
+                                    primary differentiator. Continuous testing and iteration of ad creatives based on
+                                    performance data was essential for maintaining strong results.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg">
+                                <h4 class="font-medium text-lg mb-3 flex items-center">
+                                    <div
+                                        class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i class="ri-lightbulb-line text-green-600"></i>
+                                    </div>
+                                    Cross-Functional Collaboration
+                                </h4>
+                                <p class="text-gray-700">
+                                    Success required close coordination between marketing, operations, and customer
+                                    service teams. Establishing clear communication channels and shared KPIs across
+                                    departments was crucial for managing the rapid growth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="contact" class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready for Similar Results?</h2>
+                <p class="text-xl opacity-90 max-w-2xl mx-auto">
+                    Let's transform your Meta ads performance and scale your e-commerce business with a data-driven
+                    approach.
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white bg-opacity-10 p-8 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <i class="ri-calendar-line ri-lg mr-2"></i>
+                            Book a Free Audit
+                        </h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium mb-2">Your Name</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-2 rounded-button bg-white bg-opacity-10 border border-white border-opacity-20 focus:border-secondary text-white"
+                                    placeholder="John Smith">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2 rounded-button bg-white bg-opacity-10 border border-white border-opacity-20 focus:border-secondary text-white"
+                                    placeholder="john@example.com">
+                            </div>
+                            <div class="mb-4">
+                                <label for="website" class="block text-sm font-medium mb-2">Website URL</label>
+                                <input type="url" id="website"
+                                    class="w-full px-4 py-2 rounded-button bg-white bg-opacity-10 border border-white border-opacity-20 focus:border-secondary text-white"
+                                    placeholder="https://yourstore.com">
+                            </div>
+                            <div class="mb-6">
+                                <label for="adspend" class="block text-sm font-medium mb-2">Monthly Ad Spend
+                                    (PKR)</label>
+                                <div class="relative">
+                                    <select id="adspend"
+                                        class="w-full px-4 py-2 rounded-button bg-white bg-opacity-10 border border-white border-opacity-20 focus:border-secondary text-white appearance-none pr-8">
+                                        <option value="">Select your monthly ad spend</option>
+                                        <option value="300k-500k">PKR 300,000 - 500,000</option>
+                                        <option value="500k-1m">PKR 500,000 - 1,000,000</option>
+                                        <option value="1m-3m">PKR 1,000,000 - 3,000,000</option>
+                                        <option value="3m+">PKR 3,000,000+</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                        <i class="ri-arrow-down-s-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-secondary text-primary px-6 py-3 rounded-button font-semibold hover:bg-opacity-90 transition whitespace-nowrap">
+                                Schedule Audit Call
+                            </button>
+                        </form>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-8 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <i class="ri-message-3-line ri-lg mr-2"></i>
+                            Send a Direct Message
+                        </h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="dm-name" class="block text-sm font-medium mb-2">Your Name</label>
+                                <input type="text" id="dm-name"
+                                    class="w-full px-4 py-2 rounded-button bg-white bg-opacity-10 border border-white border-opacity-20 focus:border-secondary text-white"
+                                    placeholder="John Smith">
+                            </div>
+                            <div class="mb-4">
+                                <label for="dm-email" class="block text-sm font-medium mb-2">Email Address</label>
+                                <input type="email" id="dm-email"
+                                    class="w-full px-4 py-2 rounded-button bg-white bg-opacity-10 border border-white border-opacity-20 focus:border-secondary text-white"
+                                    placeholder="john@example.com">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium mb-2">Your Message</label>
+                                <textarea id="message" rows="5"
+                                    class="w-full px-4 py-2 rounded-button bg-white bg-opacity-10 border border-white border-opacity-20 focus:border-secondary text-white"
+                                    placeholder="Tell me about your business and what you're looking to achieve..."></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-white text-primary px-6 py-3 rounded-button font-semibold hover:bg-opacity-90 transition whitespace-nowrap">
+                                Send Message
+                            </button>
+                        </form>
+                        <div class="mt-8">
+                            <p class="text-sm opacity-80 mb-4">Or reach out directly via:</p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#" class="flex items-center text-white hover:text-secondary transition">
+                                    <i class="ri-whatsapp-line ri-lg mr-2"></i>
+                                    WhatsApp
+                                </a>
+                                <a href="#" class="flex items-center text-white hover:text-secondary transition">
+                                    <i class="ri-linkedin-line ri-lg mr-2"></i>
+                                    LinkedIn
+                                </a>
+                                <a href="#" class="flex items-center text-white hover:text-secondary transition">
+                                    <i class="ri-instagram-line ri-lg mr-2"></i>
+                                    Instagram
+                                </a>
+                                <a href="#" class="flex items-center text-white hover:text-secondary transition">
+                                    <i class="ri-mail-line ri-lg mr-2"></i>
+                                    Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Case Studies Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">Related Case Studies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div
+                        class="w-12 h-12 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="ri-t-shirt-line ri-lg text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fashion Brand</h3>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
+                            Before: 1.2 ROAS
+                        </div>
+                        <i class="ri-arrow-right-line mx-2"></i>
+                        <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+                            After: 4.1 ROAS
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Restructured account and implemented custom pixel events, resulting in 240% ROAS improvement.
+                    </p>
+                    <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#case-studies"
+                        data-readdy="true"
+                        class="text-primary font-medium flex items-center hover:text-secondary transition">
+                        View Case Study
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div
+                        class="w-12 h-12 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="ri-home-line ri-lg text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Home Goods Store</h3>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
+                            Before: 0.8 ROAS
+                        </div>
+                        <i class="ri-arrow-right-line mx-2"></i>
+                        <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+                            After: 2.9 ROAS
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Implemented AI-driven product catalog ads with custom audience segmentation for 3.6x revenue
+                        growth.
+                    </p>
+                    <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#case-studies"
+                        data-readdy="true"
+                        class="text-primary font-medium flex items-center hover:text-secondary transition">
+                        View Case Study
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div
+                        class="w-12 h-12 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="ri-shopping-bag-line ri-lg text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Accessories Brand</h3>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
+                            Before: 1.5 ROAS
+                        </div>
+                        <i class="ri-arrow-right-line mx-2"></i>
+                        <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+                            After: 3.8 ROAS
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Created signal-based scaling system that doubled monthly revenue while improving profitability.
+                    </p>
+                    <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#case-studies"
+                        data-readdy="true"
+                        class="text-primary font-medium flex items-center hover:text-secondary transition">
+                        View Case Study
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#case-studies"
+                    data-readdy="true"
+                    class="bg-secondary text-primary px-8 py-3 rounded-button font-semibold hover:bg-opacity-90 transition inline-flex items-center justify-center whitespace-nowrap">
+                    <i class="ri-file-list-3-line ri-lg mr-2"></i>
+                    View All Case Studies
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white">digiTize</a>
+                    <p class="text-gray-400 mt-2">
+                        © 2025 Daniyal Ibrahim. All rights reserved.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-x-8 gap-y-4">
+                    <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#about"
+                        data-readdy="true" class="text-gray-300 hover:text-secondary transition">About</a>
+                    <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#services"
+                        data-readdy="true" class="text-gray-300 hover:text-secondary transition">Services</a>
+                    <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#case-studies"
+                        data-readdy="true" class="text-gray-300 hover:text-secondary transition">Case Studies</a>
+                    <a href="https://readdy.ai/home/282b0366-8869-481f-9faf-7ea2ad492a5b/fd1bd926-3024-49ac-a866-01d6cd7169bd#contact"
+                        data-readdy="true" class="text-gray-300 hover:text-secondary transition">Contact</a>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition">
+                            <i class="ri-whatsapp-line ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition">
+                            <i class="ri-linkedin-line ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition">
+                            <i class="ri-instagram-line ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition">
+                            <i class="ri-mail-line ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+
+    <script id="form-validation-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const forms = document.querySelectorAll('form');
+
+            forms.forEach(form => {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    let isValid = true;
+                    const inputs = form.querySelectorAll('input, textarea, select');
+
+                    inputs.forEach(input => {
+                        if (input.hasAttribute('required') && !input.value.trim()) {
+                            isValid = false;
+                            input.classList.add('border-red-500');
+
+                            // Add error message if not exists
+                            let errorMsg = input.nextElementSibling;
+                            if (!errorMsg || !errorMsg.classList.contains('error-message')) {
+                                errorMsg = document.createElement('p');
+                                errorMsg.classList.add('error-message', 'text-red-500', 'text-sm', 'mt-1');
+                                errorMsg.textContent = 'This field is required';
+                                input.parentNode.insertBefore(errorMsg, input.nextSibling);
+                            }
+                        } else {
+                            input.classList.remove('border-red-500');
+
+                            // Remove error message if exists
+                            const errorMsg = input.nextElementSibling;
+                            if (errorMsg && errorMsg.classList.contains('error-message')) {
+                                errorMsg.remove();
+                            }
+                        }
+                    });
+
+                    if (isValid) {
+                        // Form is valid, show success message
+                        const submitBtn = form.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.textContent;
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Sending...';
+
+                        // Simulate form submission
+                        setTimeout(() => {
+                            form.reset();
+                            submitBtn.textContent = 'Sent Successfully!';
+                            setTimeout(() => {
+                                submitBtn.disabled = false;
+                                submitBtn.textContent = originalText;
+                            }, 2000);
+                        }, 1500);
+                    }
+                });
+
+                // Remove error styling on input
+                const inputs = form.querySelectorAll('input, textarea, select');
+                inputs.forEach(input => {
+                    input.addEventListener('input', function () {
+                        if (input.value.trim()) {
+                            input.classList.remove('border-red-500');
+
+                            // Remove error message if exists
+                            const errorMsg = input.nextElementSibling;
+                            if (errorMsg && errorMsg.classList.contains('error-message')) {
+                                errorMsg.remove();
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script id="charts-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            // ROAS Chart
+            const roasChart = echarts.init(document.getElementById('roas-chart'));
+            const roasOption = {
+                animation: false,
+                title: {
+                    text: 'ROAS Improvement Over Time',
+                    left: 'center',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    borderColor: '#E5E7EB',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#E5E7EB'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#1f2937'
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'ROAS',
+                    nameTextStyle: {
+                        color: '#1f2937'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#E5E7EB'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#1f2937',
+                        formatter: '{value}x'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#F3F4F6'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'ROAS',
+                        data: [0.5, 1.3, 2.1, 2.8, 3.2],
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        lineStyle: {
+                            width: 3,
+                            color: 'rgba(87, 181, 231, 1)'
+                        },
+                        areaStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [
+                                    {
+                                        offset: 0,
+                                        color: 'rgba(87, 181, 231, 0.2)'
+                                    },
+                                    {
+                                        offset: 1,
+                                        color: 'rgba(87, 181, 231, 0.05)'
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ],
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    top: '15%',
+                    containLabel: true
+                }
+            };
+            roasChart.setOption(roasOption);
+
+            // Revenue Chart
+            const revenueChart = echarts.init(document.getElementById('revenue-chart'));
+            const revenueOption = {
+                animation: false,
+                title: {
+                    text: 'Monthly Revenue Growth (PKR)',
+                    left: 'center',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    borderColor: '#E5E7EB',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#E5E7EB'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#1f2937'
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'Revenue (PKR)',
+                    nameTextStyle: {
+                        color: '#1f2937'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#E5E7EB'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#1f2937',
+                        formatter: function (value) {
+                            if (value >= 1000000) {
+                                return (value / 1000000).toFixed(1) + 'M';
+                            } else if (value >= 1000) {
+                                return (value / 1000).toFixed(0) + 'K';
+                            }
+                            return value;
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#F3F4F6'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Revenue',
+                        data: [2700000, 8500000, 19000000, 32000000, 50000000],
+                        type: 'bar',
+                        barWidth: '50%',
+                        itemStyle: {
+                            color: 'rgba(141, 211, 199, 1)',
+                            borderRadius: [4, 4, 0, 0]
+                        }
+                    }
+                ],
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    top: '15%',
+                    containLabel: true
+                }
+            };
+            revenueChart.setOption(revenueOption);
+
+            // Resize charts when window size changes
+            window.addEventListener('resize', function () {
+                roasChart.resize();
+                revenueChart.resize();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
